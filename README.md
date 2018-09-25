@@ -81,6 +81,24 @@ Virtual Host file
       CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 
+---Change the permission of sshd config file
+
+sudo nano /etc/ssh/sshd_config
+
+# What ports, IPs and protocols we listen for
+# Port 22
+Port 2200
+
+# Authentication:
+LoginGraceTime 120
+#PermitRootLogin prohibit-password
+PermitRootLogin no
+StrictModes yes
+
+# Change to no to disable tunnelled clear text passwords
+PasswordAuthentication No
+
+
 
 Installing POSTGRESQL
 
